@@ -15,6 +15,13 @@ export class Api {
     return await this.execute("POST", path, body as any);
   }
 
+  public async put<TBody, TReturn>(
+    path: string,
+    body?: TBody
+  ): Promise<TReturn> {
+    return await this.execute("PUT", path, body as any);
+  }
+
   // #region Internals
   private async execute(
     method: string,
@@ -24,12 +31,10 @@ export class Api {
     const headers = new Headers();
     headers.append("Content-Type", "application/json");
     headers.append("Accept", "application/json");
-    headers.append("X-CrApi-ClientSource", "cridentity");
     let response = null;
 
     try {
       response = await fetch(this.url(path), {
-        credentials: "include",
         headers: headers,
         method: method,
         body: !body

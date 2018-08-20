@@ -9,17 +9,25 @@
       font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
       font-size: 100%;
     }
+
+    .error {
+      color: red;
+    }
+
+    .success {
+      color: green;
+    }
   </style>
-  <script src="js/vendor.js"></script>
+  <script src="js/popup.js"></script>
 </head>
 
 <body>
   <ul style="min-width: 700px;">
-    <li>Current URL: <span id="url"></span></li>
-    <li>Current Time: <span id="time"></span></li>
+    <li>Current URL: <span id="currentUrl"></span></li>
+    <li>PermaLink: <span id="permaLink"></span></li>
   </ul>
-  <button id="countUp">count up</button>
-  <button id="changeBackground">change background</button>
+  <div id="userMessage">
+  </div>
   <script src="js/popup.js"></script>
 </body>
 

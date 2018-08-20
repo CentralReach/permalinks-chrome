@@ -39,6 +39,11 @@ module.exports = {
         to: path.join(__dirname, rootDist)
       },
       {
+        from: "./src/images/",
+        to: path.join(__dirname, rootDist, "images"),
+        flatten: true
+      },
+      {
         from: "./src/**/*.html",
         to: path.join(__dirname, rootDist),
         flatten: true
