@@ -19,21 +19,9 @@
   },
 
   "background": {
-    "scripts": [
-      "js/libs/jquery3.2.1.js",
-      "js/libs/forge0.7.1.js",
-      "js/crapi.js",
-      "js/background.js"
-    ],
+    "scripts": ["js/background.js"],
     "persistent": false
   },
-
-  "content_scripts": [
-    {
-      "matches": ["https://github.centralreach.com/*", "https://github.com/*"],
-      "js": ["js/content.js", "js/libs/jquery3.2.1.js"]
-    }
-  ],
 
   "browser_action": {
     "default_icon": {
@@ -42,18 +30,9 @@
       "48": "images/icon48.png",
       "128": "images/icon128.png"
     },
-    "default_title": "CentralReach FogMachine",
+    "default_title": "CentralReach PermaLinker",
     "default_popup": "popup.html"
   },
 
-  "permissions": [
-    "activeTab",
-    "tabs",
-    "storage",
-    "notifications",
-    "idle",
-    "https://*.centralreach.com/*",
-    "https://github.centralreach.com/*/pull/*",
-    "https://github.com/*/pull/*"
-  ]
+  "permissions": ["activeTab", "storage", "<all_urls>"]
 }

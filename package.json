@@ -1,0 +1,28 @@
+{
+  "name": "centralreach-permalinks-chrome",
+  "version": "1.0.0",
+  "description": "CentralReach Internal PermaLinks Chrome Extension",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack --config webpack/webpack.dev.js --watch",
+    "build": "webpack --config webpack/webpack.prod.js"
+  },
+  "author": "CentralReach",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CentralReach/permalinks-chrome"
+  },
+  "dependencies": {
+    "chrome-extension-async": "^3.2.4"
+  },
+  "devDependencies": {
+    "@types/chrome": "~0.0.63",
+    "copy-webpack-plugin": "^4.5.2",
+    "ts-loader": "~4.5.0",
+    "typescript": "~3.0.0",
+    "webpack": "~4.16.5",
+    "webpack-cli": "~3.1.0",
+    "webpack-merge": "~4.1.4"
+  }
+}
