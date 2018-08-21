@@ -15,6 +15,9 @@ class AppSettings {
     public readonly apiRoot: string,
     public readonly traceLevel: TraceLevel
   ) {}
+
+  /** API Key to use with API requests. */
+  public apiKey: string;
 }
 
 const appSettings = new AppSettings(

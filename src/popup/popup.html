@@ -87,7 +87,22 @@
     <h1 style="vertical-align: top; display: inline; font-size: 1.5em;">CentralReach PermaLinker</h1>
   </div>
 
-  <div id="permaLinkGenerator">
+  <div id="initializing">
+    Starting up...
+  </div>
+
+  <div id="authForm" class="form" style="display: none;">
+    <div class="form-row">You need to supply an API key before you can use this extension.</div>
+    <div class="form-row">
+      <label for="newUrl">API Key</label>
+      <input type="text" tabindex="0 " id="apiKey" />
+    </div>
+    <div class="action-row">
+      <button id="saveApiKey" class="primary">Save API Key</button>
+    </div>
+  </div>
+
+  <div id="permaLinkGenerator" style="display: none;">
     <div class="form-row">
       <label>Current URL</label>
       <div class="urls" style="color: #666;" id="currentUrl"></div>

@@ -31,6 +31,9 @@ export class Api {
     const headers = new Headers();
     headers.append("Content-Type", "application/json");
     headers.append("Accept", "application/json");
+    if (settings.apiKey) {
+      headers.append("X-API-Key", settings.apiKey);
+    }
     let response = null;
 
     try {
