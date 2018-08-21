@@ -67,6 +67,7 @@ export class PermaLinkGenerator {
     }
     this.currentUrl = currentUrl;
     this.urlCallbacks.forEach(cb => cb(currentUrl));
+    this.urlCallbacks = [];
     this.domUrl.innerText = currentUrl;
     let permaLink = "";
     try {
@@ -92,6 +93,14 @@ export class PermaLinkGenerator {
     } catch (ex) {
       display.error(Errors.CopyFail, null, ex);
     }
+  };
+
+  public hide = () => {
+    this.domRoot.style.display = "none";
+  };
+
+  public show = () => {
+    this.domRoot.style.display = "block";
   };
 
   // #region Utilities

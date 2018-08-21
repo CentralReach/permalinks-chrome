@@ -3,7 +3,7 @@ import display from "./userMessageVm";
 
 export class PermaLinkUpdater {
   domUpdateToggle: HTMLAnchorElement;
-  domUpdateForm: HTMLDivElement;
+  domRoot: HTMLDivElement;
   domOldUrl: HTMLInputElement;
   domNewUrl: HTMLInputElement;
   domUpdate: HTMLButtonElement;
@@ -18,7 +18,7 @@ export class PermaLinkUpdater {
       this.domUpdateToggle = document.getElementById(
         "togglePermaLinkUpdater"
       ) as HTMLAnchorElement;
-      this.domUpdateForm = document.getElementById(
+      this.domRoot = document.getElementById(
         "permaLinkUpdater"
       ) as HTMLDivElement;
       this.domOldUrl = document.getElementById("oldUrl") as HTMLInputElement;
@@ -32,7 +32,7 @@ export class PermaLinkUpdater {
 
       ok = !!(
         this.domUpdateToggle &&
-        this.domUpdateForm &&
+        this.domRoot &&
         this.domOldUrl &&
         this.domNewUrl &&
         this.domUpdate &&
@@ -59,8 +59,8 @@ export class PermaLinkUpdater {
   }
 
   public toggleForm = (evt: MouseEvent = null) => {
-    const showing = this.domUpdateForm.style.display === "block";
-    this.domUpdateForm.style.display = showing ? "none" : "block";
+    const showing = this.domRoot.style.display === "block";
+    this.domRoot.style.display = showing ? "none" : "block";
     this.domUpdateToggle.style.display = !showing ? "none" : "block";
 
     if (showing) {
@@ -99,5 +99,14 @@ export class PermaLinkUpdater {
     } catch (ex) {
       display.error(`Could not update the URL due to server error.`, null, ex);
     }
+  };
+
+  public hide = () => {
+    this.domRoot.style.display = "none";
+    this.domUpdateToggle.style.display = "none";
+  };
+
+  public show = () => {
+    this.domUpdateToggle.style.display = "block";
   };
 }
