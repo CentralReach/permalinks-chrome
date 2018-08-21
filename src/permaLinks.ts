@@ -1,4 +1,5 @@
 import { Api } from "./api";
+import settings from "./appSettings";
 
 const Paths = {
   PermaLinks: "permalinks"
@@ -12,7 +13,19 @@ export class PermaLinks {
     };
 
     const response = (await api.post(Paths.PermaLinks, requestBody)) as any;
-    const permaLink = response && response.permaLink;
-    return permaLink;
+    const permaLinkKey = response && response.permaLinkKey;
+    return `${settings.apiRoot}/${permaLinkKey}`;
+  }
+
+  public static async updatePermaLink(oldUrl: string, newUrl: string) {
+    const api = new Api();
+    const requestBody = {
+      oldUrl,
+      newUrl
+    };
+
+    const response = (await api.put(Paths.PermaLinks, requestBody)) as any;
+    const message = response && response.message;
+    return message;
   }
 }

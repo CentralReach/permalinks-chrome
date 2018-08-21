@@ -6,9 +6,7 @@ const rootDist = "../dist/";
 
 module.exports = {
   entry: {
-    popup: path.join(__dirname, "../src/popup/popup.ts"),
-    options: path.join(__dirname, "../src/options/options.ts"),
-    background: path.join(__dirname, "../src/background/background.ts")
+    popup: path.join(__dirname, "../src/popup/popup.ts")
   },
   output: {
     path: path.join(__dirname, rootDist, "js"),

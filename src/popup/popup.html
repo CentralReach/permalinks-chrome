@@ -8,6 +8,20 @@
     body {
       font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
       font-size: 100%;
+      padding: 35px;
+      margin: 0px;
+    }
+
+    a,
+    a:visited,
+    a:hover,
+    a:focus {
+      color: maroon;
+    }
+
+    .urls {
+      font-size: .9em;
+      font-weight: 700;
     }
 
     .error {
@@ -17,18 +31,78 @@
     .success {
       color: green;
     }
+
+    .error,
+    .success {
+      position: absolute;
+      bottom: 3px;
+      font-size: .7em;
+      font-weight: 600;
+    }
+
+    .hidden {
+      position: absolute;
+      top: -3000px;
+    }
+
+    .form {
+      margin-top: 10px;
+    }
+
+    .form-row {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      font-size: .8em;
+      font-variant: all-small-caps;
+    }
+
+    .form input {
+      width: 100%;
+    }
   </style>
-  <script src="js/popup.js"></script>
 </head>
 
-<body>
-  <ul style="min-width: 700px;">
-    <li>Current URL: <span id="currentUrl"></span></li>
-    <li>PermaLink: <span id="permaLink"></span></li>
-  </ul>
+<body style="min-width: 700px;">
+  <textarea id="copier" class="hidden"></textarea>
+
+  <div style="margin-top: -15px;     margin-left: -15px; margin-bottom: 20px;">
+    <img src="../images/icon32.png" style="display: inline; margin-right: 5px;" />
+    <h1 style="vertical-align: top; display: inline; font-size: 1.5em;">CentralReach PermaLinker</h1>
+  </div>
+
+  <div class="form-row">
+    <label>Current URL</label>
+    <div class="urls" style="color: #666;" id="currentUrl"></div>
+  </div>
+  <div class="form-row">
+    <label>PermaLink</label>
+    <div class="urls"><a id="permaLink" href="#" target="_blank">Loading...</a></div>
+  </div>
+
+  <div style="margin-top:35px;">
+    <a id="togglePermaLinkUpdater" href="#">Update an existing permalink...</a>
+    <div id="permaLinkUpdater" class="form" style="display: none">
+      <div class="form-row">
+        <label for="oldUrl">Old URL</label>
+        <input type="text" tabindex="1" id="oldUrl" />
+      </div>
+      <div class="form-row">
+        <label for="newUrl">New URL</label>
+        <input type="text" tabindex="2 " id="newUrl" />
+      </div>
+      <div>
+        <button id="updatePermaLink">Update</button>
+        <a id="cancelUpdate" href="#" style="margin-left: 15px; color: #666;">Cancel</a>
+      </div>
+    </div>
+  </div>
+
   <div id="userMessage">
   </div>
-  <script src="js/popup.js"></script>
+  <script src="js/popup.js "></script>
 </body>
 
 </html>
