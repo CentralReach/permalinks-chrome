@@ -72,7 +72,11 @@ export class PermaLinkUpdater {
     }
   };
 
-  private keyUp = evt => {};
+  private keyUp = evt => {
+    if (evt.key === "Enter") {
+      this.updateUrl();
+    }
+  };
 
   private updateUrl = async () => {
     try {
