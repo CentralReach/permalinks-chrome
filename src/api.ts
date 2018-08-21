@@ -32,7 +32,7 @@ export class Api {
     headers.append("Content-Type", "application/json");
     headers.append("Accept", "application/json");
     if (settings.apiKey) {
-      headers.append("X-API-Key", settings.apiKey);
+      headers.append("x-api-key", settings.apiKey);
     }
     let response = null;
 
