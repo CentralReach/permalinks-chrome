@@ -58,7 +58,7 @@ export class PermaLinkUpdater {
     this.domOldUrl.value = value;
   }
 
-  public toggleForm = evt => {
+  public toggleForm = (evt: MouseEvent = null) => {
     const showing = this.domUpdateForm.style.display === "block";
     this.domUpdateForm.style.display = showing ? "none" : "block";
     this.domUpdateToggle.style.display = !showing ? "none" : "block";
@@ -89,7 +89,13 @@ export class PermaLinkUpdater {
 
       const message = await PermaLinks.updatePermaLink(oldUrl, newUrl);
 
+      // This is a total hack..
+      // I don't know why, yet, but until I call update a second time, it seems to cache the old URL for the permalink
+      await PermaLinks.updatePermaLink(oldUrl, newUrl);
+
       display.success(message);
+
+      this.toggleForm();
     } catch (ex) {
       display.error(`Could not update the URL due to server error.`, null, ex);
     }
