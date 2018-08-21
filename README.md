@@ -16,6 +16,9 @@ Probably obvious, but we'd only accept PRs from CentralReach employees, given th
 2. `npm run watch` - for dev. this will keep the dist folder up to date as you work on it.
 3. In Chrome, you enable dev mode in the Extensions page, then "Load Unpacked" and pick the `dist` directory on your maching.
 
-### Deploying
+### Deploying/Publishing
 
-TODO: Publish to Chrome store...
+1. Probably should delete the `dist` dir just to be safe.
+2. Build for production: `npm run build`
+3. ZIP up the contents of the `dist` folder.
+4. You'll have to login with our company Google account to update it [in the store](https://chrome.google.com/webstore/developer/dashboard). Contact Chad or Ambrose for the credentials.
