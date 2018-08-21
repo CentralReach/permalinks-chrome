@@ -61,6 +61,20 @@
 
     .form input {
       width: 100%;
+      font-size: 1em;
+    }
+
+    .form .action-row {
+      margin-top: 15px;
+    }
+
+    .form button.primary {
+      font-size: 1em;
+      background-color: maroon;
+      color: #f4f4f4;
+      border-radius: 3px;
+      border: 0px;
+      padding: 8px;
     }
   </style>
 </head>
@@ -83,7 +97,7 @@
   </div>
 
   <div style="margin-top:35px;">
-    <a id="togglePermaLinkUpdater" href="#">Update an existing permalink...</a>
+    <a id="togglePermaLinkUpdater" href="#">Update an Existing Permalink</a>
     <div id="permaLinkUpdater" class="form" style="display: none">
       <div class="form-row">
         <label for="oldUrl">Old URL</label>
@@ -93,9 +107,9 @@
         <label for="newUrl">New URL</label>
         <input type="text" tabindex="2 " id="newUrl" />
       </div>
-      <div>
-        <button id="updatePermaLink">Update</button>
-        <a id="cancelUpdate" href="#" style="margin-left: 15px; color: #666;">Cancel</a>
+      <div class="action-row">
+        <button id="updatePermaLink" class="primary">Update</button>
+        <a id="cancelUpdate" href="#" style="margin-left: 10px; color: #666; font-size: .8em;">Cancel</a>
       </div>
     </div>
   </div>
