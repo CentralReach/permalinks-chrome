@@ -1,5 +1,11 @@
 Chrome extension to facilitate using/managing permalinks for internal docs.
 
+## Getting/Running
+
+If you just want to get and use it, [find it in the Chrome Store](https://chrome.google.com/webstore/detail/permalinker-by-centralrea/hkkojfopkpmahnnbpimmhfnfjnhkgkkg?hl=en-US).
+
+You will need the API key, which you can get from DevOps.
+
 ## Basic Usage (Getting Permalinks)
 
 On any page, click the extension button. (After you have setup the API key), it will create a permalink and copy that permalink to the clipboard. Use this instead of directly copying URLs for documentation links.
