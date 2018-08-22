@@ -21,7 +21,7 @@ class AppSettings {
 }
 
 const appSettings = new AppSettings(
-  "https://6wctztyaxc.execute-api.us-east-1.amazonaws.com/dev",
+  "https://link.centralreach.com",
   TraceLevel.Info
 );
 
