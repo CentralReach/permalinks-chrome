@@ -18,7 +18,6 @@ Probably obvious, but we'd only accept PRs from CentralReach employees, given th
 
 ### Deploying/Publishing
 
-1. Probably should delete the `dist` dir just to be safe.
-2. Build for production: `npm run build`
-3. ZIP up the contents of the `dist` folder.
-4. You'll have to login with our company Google account to update it [in the store](https://chrome.google.com/webstore/developer/dashboard). Contact Chad or Ambrose for the credentials.
+1. Build for production: `npm run build`
+2. ZIP up the contents of the `dist` folder (inside the folder--don't have dist in the ZIP file paths).
+3. You'll have to login with our company Google account to update it [in the store](https://chrome.google.com/webstore/developer/dashboard). Contact Chad or Ambrose for the credentials.
